@@ -64,3 +64,31 @@ def inverse_kinematics_3r(target_x, target_y, target_phi_rad, link_lengths, elbo
     t3 = target_phi_rad - t1 - t2
 
     return np.array([t1, t2, t3], dtype=float)
+
+class RobotArm6DOF:
+
+    def __init__(self):
+        self.d = [0.089159, 0.0, 0.0, 0.10915, 0.09465, 0.0823]
+        self.a = [0.0, -0.425, -0.39225, 0.0, 0.0, 0.0]
+        self.alpha = [np.pi/2, 0.0, 0.0, np.pi/2, -np.pi/2, 0.0]
+
+    def dh_matrix(self, theta, d, a, alpha):
+        ct, st = np.cos(theta), np.sin(theta)
+        ca, sa = np.cos(alpha), np.sin(alpha)
+        return np.array([
+            [ct, -st * ca,  st * sa, a * ct],
+            [st,  ct * ca, -ct * sa, a * st],
+            [0,        sa,       ca,      d],
+            [0,         0,        0,      1]
+        ], dtype=float)
+
+    def forward_kinematics(self, joint_angles):
+        T = np.eye(4)
+        points = [T[0:3, 3]]
+
+        for i in range(6):
+            Ti = self.dh_matrix(joint_angles[i], self.d[i], self.a[i], self.alpha[i])
+            T = T @ Ti
+            points.append(T[0:3, 3])
+
+        return np.array(points)
