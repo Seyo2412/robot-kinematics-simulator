@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from src.kinematics import RobotArm6DOF
-#from scr.trajectory import plan_quintic_trajectory
+from src.trajectory import plan_quintic_trajectory
 
 robot = RobotArm6DOF()
 
