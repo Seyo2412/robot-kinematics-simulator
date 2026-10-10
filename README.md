@@ -5,7 +5,8 @@
 ## Features
  - Forward Kinematics (FK) based on trigonometric link compounding.
  - Analytical Inverse Kinematics (IK) for planar 3-DOF manipulators with reachability checks.
- - Matplotlib visualization comparing target postions with calculated end-effector poses.
+ - Smooth trajectory planning via quintic polynomials (C2-continuous jerk-limited profiles).
+ - Real-time animated simulation showing end-effector path tracing.
 
 ## Installation
 
@@ -31,5 +32,5 @@
 
  - [x] Planar 3R Forward Kinematics (DH Matrix)
  - [x] Inverse Kinematics (IK) via Analytical & Numeral Methods
- - [ ] Quintic Polynomial Trajectory Planning
+ - [x] Quintic Polynomial Trajectory Planning
  - [ ] 3D Kinematics for 6-DOF Manipulators (UR5 / PUMA)
