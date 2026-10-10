@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from src.kinematics import forward_kinematics_3r
 
-link_lengths = [2.0, 2.0, 2.0]
-angles_deg = [30, 45, -45]
+link_lengths = [2.0, 1.5, 1.0]
+angles_deg = [30, 45, -30]
 angles_rad = np.radians(angles_deg)
 
 joint_positions = forward_kinematics_3r(angles_rad, link_lengths)
