@@ -3,9 +3,9 @@
  A modular kinematics and trajectory simulation tool for multi-joint robotic arms built with Python, Numpy and Matplotlib. 
 
 ## Features
- - Forward Kinematics (FK) based on standard Denavit-Hartenberg (DH) parameterization.
- - Interactive Matplotlib visualization of planar 3-DOF manipulators.
- - Clean separation between mathematical models and plotting routines.
+ - Forward Kinematics (FK) based on trigonometric link compounding.
+ - Analytical Inverse Kinematics (IK) for planar 3-DOF manipulators with reachability checks.
+ - Matplotlib visualization comparing target postions with calculated end-effector poses.
 
 ## Installation
 
@@ -30,6 +30,6 @@
 ## Roadmap
 
  - [x] Planar 3R Forward Kinematics (DH Matrix)
- - [ ] Inverse Kinematics (IK) via Analytical & Numeral Methods
+ - [x] Inverse Kinematics (IK) via Analytical & Numeral Methods
  - [ ] Quintic Polynomial Trajectory Planning
  - [ ] 3D Kinematics for 6-DOF Manipulators (UR5 / PUMA)
