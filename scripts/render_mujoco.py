@@ -1,8 +1,12 @@
 import os
+import sys
 import numpy as np
 import mujoco
+from pathlib import Path
 from PIL import Image
 from src.trajectory import plan_quintic_trajectory
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 os.makedirs("assets", exist_ok=True)
 

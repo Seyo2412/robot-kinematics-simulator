@@ -30,10 +30,16 @@
  ```bash
  python main.py
  ```
+ Run the interactive 3D 6-DOF robot animation:
 
- Render the photorealistic MuJoCo simulation GIF:
  ```bash
- python render_mujoco.py
+ python scripts/main_3d.py
+ ```
+
+ Render simulation animations:
+ ```bash
+ python scripts/render_mujoco.py
+ python scripts/render_pyvista.py
  ```
 
  Run the automated test suite:

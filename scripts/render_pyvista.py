@@ -1,8 +1,12 @@
 import os
+import sys
+from pathlib import Path
 import numpy as np
 import pyvista as pv
 from src.kinematics import RobotArm6DOF
 from src.trajectory import plan_quintic_trajectory
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 os.makedirs("assets", exist_ok=True)
 
