@@ -5,11 +5,11 @@
  ![3D Robot Simulation Demo](assets/demo_3d.gif)
 
 ## Features
- - Forward Kinematics (FK) for both planar 3R and spatial 6-DOF manipulators (UR5 parameters via DH-matrices).
- - Analytical Inverse Kinematics (IK) for planar 3-DOF manipulators with workspace reachability checks.
- - Smooth trajectory planning via quintic polynomials (C2-continuous, jerk-limited motion profiles).
- - Interactive 2D and 3D animated visualization with real-time end-effector path tracing.
- - Automated unit testing suite with pytest verifying mathematical correctness.
+ - **Kinematics Engine:** Forward kinematics for planar 3R and spatial 6-DOF manipulators (UR5 parameters via standard Denavit-Hartenberg matrices).
+ - **Inverse Kinematics:** Analytical IK solver for planar 3-DOF arms with geometric workspace boundary checks.
+ - **Trajectory Planning:** Jerk-limited, C2-continuous motion profiles based on quintic polynomial interpolation.
+ - **High-Fidelity Rendering:** Interactive 3D visualization and CAD-grade rendering with metallic shaders, volumetric links, and trace projection using PyVista & VTK.
+ - **Automated Testing:** Fully automated unit test suite with `pytest` for kinematic precision verification.
 
 ## Installation
 
@@ -37,6 +37,12 @@
  python main_3d.py
  ```
 
+ Render the high-fidelity 3D simulation GIF (PyVista):
+
+ ```bash
+ python render_pyvista.py
+ ```
+
  Run the automated test suite:
 
  ```bash
@@ -49,4 +55,5 @@
  - [x] Inverse Kinematics (IK) via Analytical Methods
  - [x] Trajectory Planning (quintic polynomial interpolation)
  - [x] 3D Kinematics for 6-DOF Manipulator (UR5 Industrial Arm)
+ - [x] CAD-Grade 3D Volumetric Rendering (PyVista & VTK)
  - [x] Automated Unit Test Suite (pytest)
